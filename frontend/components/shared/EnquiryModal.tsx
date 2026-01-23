@@ -63,7 +63,7 @@ export default function EnquiryModal({ isOpen, onClose, title, type = 'experienc
                                             Curate Your <span className="text-accent">Journey</span>
                                         </h2>
                                         <p className="text-neutral-slate mt-2">
-                                            Interested in <span className="font-semibold text-primary">{title}</span>? Let's connect.
+                                            Interested in <span className="font-semibold text-primary">{title}</span>? Let&apos;s connect.
                                         </p>
                                     </div>
 

@@ -199,7 +199,7 @@ export default function ItineraryGenerator() {
                                 </div>
                                 <h2 className="text-4xl font-heading font-black text-primary mb-4">Itinerary Ready</h2>
                                 <p className="text-neutral-slate mb-10 max-w-sm mx-auto leading-relaxed">
-                                    We've curated a custom **{selectedDays}-day path** featuring **{selectedCats.length} focuses** for the **{selectedTime === 'day' ? 'day' : 'night'}**.
+                                    We&apos;ve curated a custom **{selectedDays}-day path** featuring **{selectedCats.length} focuses** for the **{selectedTime === 'day' ? 'day' : 'night'}**.
                                 </p>
 
                                 <div className="bg-secondary/20 p-6 rounded-2xl mb-10 border border-primary/5 text-left max-w-md mx-auto">

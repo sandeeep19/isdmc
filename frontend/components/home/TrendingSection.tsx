@@ -28,7 +28,7 @@ export default function TrendingSection() {
               </Link>
             </div>
             <div className="space-y-6">
-              {stories?.data?.results?.map((story) => (
+              {stories?.results?.map((story) => (
                 <Link
                   key={story.id}
                   href={`/stories/${story.slug}`}
@@ -38,7 +38,7 @@ export default function TrendingSection() {
                     <div className="relative w-24 h-24 flex-shrink-0 bg-gray-200 rounded">
                       {story.hero_image && (
                         <img
-                          src={story.hero_image}
+                          src={story.hero_image.image_file}
                           alt={story.title}
                           className="w-full h-full object-cover rounded"
                         />
@@ -65,7 +65,7 @@ export default function TrendingSection() {
               </Link>
             </div>
             <div className="space-y-6">
-              {events?.data?.results?.map((event) => (
+              {events?.results?.map((event) => (
                 <Link
                   key={event.id}
                   href={`/events/${event.id}`}

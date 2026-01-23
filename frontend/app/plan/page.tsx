@@ -13,7 +13,7 @@ export default function PlanPage() {
                         Design Your <span className="text-accent">Legend</span>
                     </h1>
                     <p className="text-xl text-neutral-slate leading-relaxed">
-                        The streets of Kashi are a labyrinth of secrets. Select your focus, and we'll craft a path that reveals the soul of the city, tailored just for you.
+                        The streets of Kashi are a labyrinth of secrets. Select your focus, and we&apos;ll craft a path that reveals the soul of the city, tailored just for you.
                     </p>
                 </div>
 
@@ -21,7 +21,7 @@ export default function PlanPage() {
 
                 <div className="mt-20 text-center max-w-xl mx-auto">
                     <p className="text-neutral-slate text-sm">
-                        Our itineraries are curated by local experts and historians. By requesting a PDF, you'll connect with our Studio Curators who will provide the final document and any assistance you need for your journey.
+                        Our itineraries are curated by local experts and historians. By requesting a PDF, you&apos;ll connect with our Studio Curators who will provide the final document and any assistance you need for your journey.
                     </p>
                 </div>
             </div>

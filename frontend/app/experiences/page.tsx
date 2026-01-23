@@ -34,7 +34,7 @@ export default function ExperiencesPage() {
                 <span className="text-accent font-bold tracking-[0.3em] uppercase text-xs mb-2 block">Our Collections</span>
                 <h1 className="font-heading text-5xl md:text-7xl font-black text-primary mb-8 leading-tight">Curated <span className="text-accent">Experiences</span></h1>
                 <p className="text-xl text-neutral-slate max-w-3xl mx-auto leading-relaxed border-l-4 border-accent pl-8 py-2 bg-white/5 backdrop-blur-sm rounded-r-2xl italic font-medium">
-                    Beyond a guide, we are your collaborators in crafting unforgettable memories in Banaras, the world's oldest living city.
+                    Beyond a guide, we are your collaborators in crafting unforgettable memories in Banaras, the world&apos;s oldest living city.
                 </p>
             </div>
 
