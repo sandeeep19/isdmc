@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['res.cloudinary.com', 'localhost', '3.238.237.207', 'www.indianstudiodmc.com', 'indianstudiodmc.com'],
+    domains: ['res.cloudinary.com', 'localhost', 'www.indianstudiodmc.com', 'indianstudiodmc.com'],
     remotePatterns: [
       {
         protocol: 'https',

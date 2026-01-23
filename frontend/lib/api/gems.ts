@@ -40,17 +40,17 @@ export const gemsApi = {
     verification_status?: 'approved';
     neighbourhood?: string;
   }) => {
-    const { data } = await apiClient.get('/gems/', { params });
+    const { data } = await apiClient.get('gems/', { params });
     return data;
   },
 
   detail: async (slug: string) => {
-    const { data } = await apiClient.get(`/gems/${slug}/`);
+    const { data } = await apiClient.get(`gems/${slug}/`);
     return data;
   },
 
   submit: async (submission: GemSubmission) => {
-    const { data } = await apiClient.post('/gems/submit/', submission);
+    const { data } = await apiClient.post('gems/submit/', submission);
     return data;
   },
 };

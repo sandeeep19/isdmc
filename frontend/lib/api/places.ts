@@ -36,17 +36,17 @@ export const placesApi = {
     ordering?: string;
     limit?: number;
   }) => {
-    const { data } = await apiClient.get('/places/', { params });
+    const { data } = await apiClient.get('places/', { params });
     return data;
   },
 
   detail: async (slug: string) => {
-    const { data } = await apiClient.get(`/places/${slug}/`);
+    const { data } = await apiClient.get(`places/${slug}/`);
     return data;
   },
 
   featured: async () => {
-    const { data } = await apiClient.get('/places/', { params: { featured: true } });
+    const { data } = await apiClient.get('places/', { params: { featured: true } });
     return data;
   },
 };

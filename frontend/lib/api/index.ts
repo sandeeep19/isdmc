@@ -104,37 +104,37 @@ export interface Story {
 // API functions
 export const placesApi = {
   list: async (params?: { type?: string; neighbourhood?: string; featured?: boolean; search?: string; limit?: number }) => {
-    const { data } = await apiClient.get<{ results: Place[]; count: number }>('/places/', { params });
+    const { data } = await apiClient.get<{ results: Place[]; count: number }>('places/', { params });
     return data;
   },
   detail: async (slug: string) => {
-    const { data } = await apiClient.get<Place>(`/places/${slug}/`);
+    const { data } = await apiClient.get<Place>(`places/${slug}/`);
     return data;
   },
 }
 
 export const foodsApi = {
   list: async (params?: { dish_type?: string; search?: string; limit?: number }) => {
-    const { data } = await apiClient.get<{ results: Food[]; count: number }>('/foods/', { params });
+    const { data } = await apiClient.get<{ results: Food[]; count: number }>('foods/', { params });
     return data;
   },
   detail: async (slug: string) => {
-    const { data } = await apiClient.get<Food>(`/foods/${slug}/`);
+    const { data } = await apiClient.get<Food>(`foods/${slug}/`);
     return data;
   },
 }
 
 export const gemsApi = {
   list: async (params?: { category?: string; status?: string; limit?: number }) => {
-    const { data } = await apiClient.get<{ results: HiddenGem[]; count: number }>('/gems/', { params });
+    const { data } = await apiClient.get<{ results: HiddenGem[]; count: number }>('gems/', { params });
     return data;
   },
   detail: async (slug: string) => {
-    const { data } = await apiClient.get<HiddenGem>(`/gems/${slug}/`);
+    const { data } = await apiClient.get<HiddenGem>(`gems/${slug}/`);
     return data;
   },
   submit: async (formData: FormData) => {
-    const { data } = await apiClient.post('/gems/submit/', formData, {
+    const { data } = await apiClient.post('gems/submit/', formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
     return data;
@@ -143,37 +143,37 @@ export const gemsApi = {
 
 export const eventsApi = {
   list: async (params?: { event_type?: string; upcoming?: boolean; limit?: number }) => {
-    const { data } = await apiClient.get<{ results: Event[]; count: number }>('/events/', { params });
+    const { data } = await apiClient.get<{ results: Event[]; count: number }>('events/', { params });
     return data;
   },
   detail: async (id: number) => {
-    const { data } = await apiClient.get<Event>(`/events/${id}/`);
+    const { data } = await apiClient.get<Event>(`events/${id}/`);
     return data;
   },
 }
 
 export const storiesApi = {
   list: async (params?: { search?: string; limit?: number }) => {
-    const { data } = await apiClient.get<{ results: Story[]; count: number }>('/stories/', { params });
+    const { data } = await apiClient.get<{ results: Story[]; count: number }>('stories/', { params });
     return data;
   },
   detail: async (slug: string) => {
-    const { data } = await apiClient.get<Story>(`/stories/${slug}/`);
+    const { data } = await apiClient.get<Story>(`stories/${slug}/`);
     return data;
   },
 }
 
 export const authApi = {
   login: async (username: string, password: string) => {
-    const { data } = await apiClient.post<{ access: string; refresh: string }>('/auth/token/', { username, password });
+    const { data } = await apiClient.post<{ access: string; refresh: string }>('auth/token/', { username, password });
     return data;
   },
   refresh: async (refresh: string) => {
-    const { data } = await apiClient.post<{ access: string }>('/auth/token/refresh/', { refresh });
+    const { data } = await apiClient.post<{ access: string }>('auth/token/refresh/', { refresh });
     return data;
   },
   profile: async () => {
-    const { data } = await apiClient.get('/profiles/me/');
+    const { data } = await apiClient.get('profiles/me/');
     return data;
   },
 }
