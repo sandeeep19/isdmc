@@ -5,3 +5,5 @@ node_modules
 *.json
 !package.json
 !package-lock.json
+!tsconfig.json
+!.eslintrc.json
