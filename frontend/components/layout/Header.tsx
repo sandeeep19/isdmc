@@ -35,36 +35,12 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-12">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-4 group">
-            <div className="relative flex items-center justify-center w-14 h-14 bg-accent rounded-2xl transition-all duration-500 group-hover:bg-primary shadow-xl group-hover:shadow-primary/30 group-hover:-rotate-3">
-              {/* Banarasi Shiva Type Icon: Stylized Trishul with Crescent Moon */}
-              <svg
-                className="w-10 h-10 text-primary group-hover:text-accent transition-all duration-500"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                {/* Central Spear */}
-                <path d="M12 2v20" />
-                {/* Outer Curves (Trishul) */}
-                <path d="M7 6c0 0 1 2 5 2s5-2 5-2" />
-                <path d="M5 4c0 0 2 4 7 4s7-4 7-4" />
-                {/* Crescent Moon element at base of spearhead */}
-                <path d="M10 5a4 4 0 0 1 4 0" fill="currentColor" className="opacity-40" />
-              </svg>
-              <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </div>
-            <div className="flex flex-col -space-y-2">
-              <span className="text-2xl font-heading font-black tracking-tighter text-primary group-hover:text-accent transition-colors duration-300">
-                INDIAN STUDIO
-              </span>
-              <span className="text-base font-heading font-black tracking-[0.5em] text-accent group-hover:text-primary transition-all duration-500">
-                DMC
-              </span>
-            </div>
+          <Link href="/" className="flex items-center group">
+            <img
+              src="/logo.png"
+              alt="Indian Studio DMC"
+              className="h-16 w-auto transition-all duration-300 group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Navigation */}
