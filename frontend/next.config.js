@@ -7,7 +7,8 @@ const nextConfig = {
       'localhost',
       'www.indianstudiodmc.com',
       'indianstudiodmc.com',
-      'isdmc-images.s3.us-east-1.amazonaws.com'
+      'isdmc-images.s3.us-east-1.amazonaws.com',
+      'dynamic-media-cdn.tripadvisor.com'
     ],
     remotePatterns: [
       {
@@ -17,6 +18,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: '**.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.tripadvisor.com',
       },
       {
         protocol: 'https',
