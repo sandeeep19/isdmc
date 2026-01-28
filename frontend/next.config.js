@@ -2,11 +2,21 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['res.cloudinary.com', 'localhost', 'www.indianstudiodmc.com', 'indianstudiodmc.com'],
+    domains: [
+      'res.cloudinary.com',
+      'localhost',
+      'www.indianstudiodmc.com',
+      'indianstudiodmc.com',
+      'isdmc-images.s3.us-east-1.amazonaws.com'
+    ],
     remotePatterns: [
       {
         protocol: 'https',
         hostname: '**.cloudinary.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.amazonaws.com',
       },
       {
         protocol: 'https',
