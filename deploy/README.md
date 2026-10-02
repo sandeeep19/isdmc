@@ -4,11 +4,17 @@ Production runs on a single Lightsail instance with docker-compose behind nginx.
 
 | | |
 |---|---|
-| Instance | `isdmc-prod` (us-east-1a, `small_3_0`, 2 GB RAM) |
-| Static IP | `35.172.253.218` |
+| Instance | `isdmc-micro` (us-east-1a, `micro_3_0`, 1 GB RAM, 3 GB swap) |
+| Static IP | `35.172.253.218` (attached; free while attached) |
 | App root | `/opt/isdmc` |
 | SSH | `ssh -i ~/.ssh/isdmc-lightsail.pem ubuntu@35.172.253.218` |
-| Cost | $12/mo instance; static IP free while attached |
+| Cost | $7/mo instance + tax; ~$8.73/mo all-in |
+
+The 3 GB swap matters: `npm run build` will not fit in 1 GB of RAM alone.
+
+Lightsail bills the bundle whether the instance runs or is stopped, so stopping
+it saves nothing -- only deleting does. If the instance is ever deleted,
+release the static IP too: free while attached, ~$3.60/mo left floating.
 
 ## Routing
 
@@ -32,6 +38,7 @@ rsync -az --delete \
   --exclude '.git/' --exclude '.venv/' --exclude 'venv/' \
   --exclude 'node_modules/' --exclude '.next/' --exclude '__pycache__/' \
   --exclude 'backend/.env' --exclude 'backend/.env.production' \
+  --exclude 'backend/db.sqlite3' \
   ./ ubuntu@35.172.253.218:/opt/isdmc/
 
 ssh -i ~/.ssh/isdmc-lightsail.pem ubuntu@35.172.253.218 \
@@ -62,7 +69,7 @@ ssh -i ~/.ssh/isdmc-lightsail.pem ubuntu@35.172.253.218 \
   'sudo sqlite3 /opt/isdmc/backend/db.sqlite3 ".backup /tmp/db-$(date +%F).sqlite3"'
 ```
 
-Note this file is also tracked in git, so a `git pull` on the server would
-overwrite live data. Deploys use rsync with `backend/db.sqlite3` NOT excluded,
-which means a local copy would also overwrite it — exclude it explicitly once
-the live data diverges from the repo.
+This file is also tracked in git, so a `git pull` on the server would overwrite
+live data. The deploy rsync above excludes it for the same reason -- production
+data now lives only on the instance, and a push from a laptop would otherwise
+replace it with the repo's copy.
