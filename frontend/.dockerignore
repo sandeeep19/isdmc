@@ -1,9 +1,4 @@
-node_modules
-.next
-.env.local
-.DS_Store
-*.json
-!package.json
-!package-lock.json
-!tsconfig.json
-!.eslintrc.json
+node_modules/
+.next/
+.git/
+*.json.bak
