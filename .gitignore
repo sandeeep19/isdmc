@@ -1,0 +1,17 @@
+# Secrets
+backend/.env
+backend/.env.production
+deploy/active.conf
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node
+node_modules/
+.next/
+
+# Build output
+backend/staticfiles/

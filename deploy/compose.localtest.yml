@@ -1,0 +1,8 @@
+# Local-only override: nginx on 8080 so it does not fight port 80, and no
+# certbot container. Not used on the server.
+services:
+  nginx:
+    ports: !override
+      - "8080:80"
+  certbot:
+    profiles: ["disabled"]
